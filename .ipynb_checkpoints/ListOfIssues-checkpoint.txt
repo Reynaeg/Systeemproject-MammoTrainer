@@ -1,0 +1,6 @@
+Issues we've ran into while working on the project:
+
+- Countless bugs regarding imports/packages/environments/everything really.
+- GitHub being annoying when nuking/creating branches.
+- Getting the model to work
+- Figuring out how to make the model actually work better (like separating image types)
