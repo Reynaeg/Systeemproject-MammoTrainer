@@ -13,7 +13,7 @@ Our goal was to create an application which medical students could use to practi
 
 In the back-end related files, the U-Net model was trained to predict the location and size of the tumor region(s). This process, and the initial data-cleaning, can be seen in ```LowEnergyFinal.ipynb``` and ```SubtractedFinal.ipynb```. For our final product, we've only used subtracted images as they are usually easier for the human eye to analyze and the model struggling with all the noise in low energy scans. Running the file will cause the ground-truth masks to be recalculated and a model to be trained, so it's recommended to not run them unless necessary as it is very slow.
 
-By running all cells in ```MammoTrainer.ipynb``` and by making sure all the ncessary packages are installed + the correct file path is set for the notebook to read the images, Mammotrainer will launch. By pressing the link provided by the output cell, MammoTrainer opens in a separate window.
+By running all cells in ```MammoTrainer.ipynb``` and by making sure all the necessary packages are installed + the correct file path is set for the notebook to read the images, Mammotrainer will launch. By pressing the link provided by the output cell, MammoTrainer opens in a separate window.
 
 The user will first be shown a short tutorial gif showing how to annotate circles on the scans. If a tumor is identified, annotating goes as follows:
 * First, click on the **center** of the tumor identified.
@@ -26,7 +26,7 @@ The classification of the tumor is either 'benign', 'malignant' or 'normal', whi
 A progress bar is shown on top of the screen. The user can go to the previous/next image by using the 'Back' and 'Next' buttons respectively. A new session can be started by pressing the 'New session' button, which will cause the program to reset all progress and pick 5 new images to display.
 
 ### Discussion: What could have been improved?
-Overal, the back-end U-Net model could use some improvement. The model evaluation metrics score pretty well, and for this prototype it's definitely adequate, but it could definitely be improved upon. Although we've tried different tactics, such as image morpoholy and self-attention, our PCs could not handle the constant load of training models, and the models we did train with these methods, did not necessarily improve much compared to the models trained without these methods.
+Overal, the back-end U-Net model could use some improvement. The model evaluation metrics score pretty well, and for this prototype it's definitely adequate, but it could definitely be improved upon. Although we've tried different tactics, such as image morphology and self-attention, our PCs could not handle the constant load of training models, and the models we did train with these methods, did not necessarily improve much compared to the models trained without these methods.
 
 We also chose Gradio as our package to create our application with. Gradio's documentation is sadly a little iffy, and we've experienced lots of bugs and unintuitive methods of creating certain functions. Gradio does not allow for simple annotations on an image, such as clicking and moving your mouse around to create a circle (similar to Microsoft Paint's circle tool), instead opting for methods like pressing 3 times to select coördinates to create a circle. Although it works fine enough for this prototype, for future projects we probably would not use Gradio but find an alternative way of creating our application.
 
